@@ -80,7 +80,7 @@ Restart the forwarder:
 ```bash
 /opt/splunkforwarder/bin/splunk restart
 ```
-4. Verify Logs in Splunk
+### **4. Verify Logs in Splunk**
 
 Example SPL queries:
 index=linux
@@ -91,7 +91,7 @@ If events appear, the forwarder is configured correctly.
 
 ---
 
-Notes
+### Notes
 
 This is a small SIEM onboarding lab meant to demonstrate basic Splunk data forwarding.
 It provides practical experience with:
