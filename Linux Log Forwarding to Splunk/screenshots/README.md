@@ -5,7 +5,7 @@
 ### **1. Splunk Forwarder Status**
 This screenshot shows the Splunk Universal Forwarder restarting successfully after configuration changes.
 
-![Forwarder Status](screenshots/forwarder_status.png)
+![Forwarder Status](../Linux%20Log%20Forwarding%20to%20Splunk/screenshots/forwarder_status.png)
 
 
 ---
