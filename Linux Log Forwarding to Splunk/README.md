@@ -52,6 +52,8 @@ Example commands:
 Enable Forwarder on boot:
 /opt/splunkforwarder/bin/splunk enable boot-start
 
+---
+
 3. Configure Log Forwarding
 
 ### inputs.conf
