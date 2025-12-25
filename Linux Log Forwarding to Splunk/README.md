@@ -48,14 +48,13 @@ Splunk-Log-Forwarding/
 Example commands:
 
 ```bash
-dpkg -i splunkforwarder.deb
-/opt/splunkforwarder/bin/splunk start --accept-license
 
 Enable Forwarder on boot:
 /opt/splunkforwarder/bin/splunk enable boot-start
 
 3. Configure Log Forwarding
-inputs.conf
+
+### inputs.conf
 [monitor:///var/log/auth.log]
 index = linux
 sourcetype = linux:auth
