@@ -48,13 +48,13 @@ Splunk-Log-Forwarding/
 
 Example commands:
 
-```
+```bash
 dpkg -i splunkforwarder.deb
 /opt/splunkforwarder/bin/splunk start --accept-license
 ```
 
 ### Enable Forwarder on boot
-```
+```bash
 /opt/splunkforwarder/bin/splunk enable boot-start
 ```
 ---
@@ -83,10 +83,12 @@ server = <Splunk_Server_IP>:9997
 ### **4. Verify Logs in Splunk**
 
 Example SPL queries:
+```spl
 index=linux
 index=* 
 | dedup host source sourcetype 
 | table host source sourcetype
+```
 If events appear, the forwarder is configured correctly.
 
 ---
