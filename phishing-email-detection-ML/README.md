@@ -1,55 +1,54 @@
 Phishing Email Detection Using Machine Learning
 
-This project builds and evaluates machine learning models for classifying emails as phishing or legitimate using text-based features.
-The notebook includes preprocessing, feature engineering, TF-IDF vectorization, model training, evaluation, and performance visualization.
+This project explores machine learning techniques for identifying phishing emails based on text content. The work includes data cleaning, feature engineering, TF-IDF vectorization, model training and evaluation, and a comparison of performance between Logistic Regression and Random Forest classifiers.
 
-🚀 Project Overview
+Project Overview
 
-The goal is to detect phishing emails using supervised machine learning.
-Two models were implemented:
+The objective is to build and evaluate models that distinguish phishing emails from legitimate ones.
+The dataset used for this project is the CEAS 2008 email dataset, which contains a little over 39,000 samples.
+
+Two supervised learning models were tested:
 
 Logistic Regression
 
 Random Forest Classifier
 
-Both models were trained on the CEAS 2008 spam/phishing dataset, containing 39,153 emails.
-
-📂 Repository Structure
+Repository Structure
 phishing-email-detection-ML/
 │
 ├── notebook/
-│   └── Project_619_2.ipynb          # Full ML workflow with outputs
+│   └── Project_619_2.ipynb
 │
 ├── report/
 │   ├── Final_Project_Report_Team08.docx
-│   ├── Project_619_22_1764986457.pdf
+│   └── Project_619_22_1764986457.pdf
 │
 └── README.md
 
-🧠 Methodology
-✔ Data Preprocessing
+Methodology
+Data preprocessing
 
-Subject and body merged
+Combined email subject and body into a single text field
 
-Feature extraction: email_length, subject_length, sender_domain
+Extracted basic features such as subject length, email length, and sender domain
 
-Text cleaning (lowercase, punctuation removal, whitespace normalization)
+Applied standard text-cleaning steps (lowercasing, removing punctuation, etc.)
 
-✔ Feature Engineering
+Feature Engineering
 
-TF-IDF vectorization for text
+TF-IDF applied to the text component
 
-Numerical + categorical features combined
+Numerical and categorical features were merged into a single feature space
 
-✔ Model Training
+Model Training
 
-80/20 stratified train-test split
+Dataset split into training and testing sets (80/20, stratified)
 
-Logistic Regression
+Implemented Logistic Regression and Random Forest models
 
-Random Forest
+Evaluation
 
-✔ Evaluation Metrics
+Models were assessed using:
 
 Accuracy
 
@@ -59,65 +58,42 @@ Recall
 
 F1-score
 
-Confusion Matrix
+Confusion matrix
 
-📊 Model Performance
+Model Performance
 Logistic Regression
 
 Accuracy: 99.48%
 
-Perfect precision, recall, and F1-score for both classes
+Very strong precision and recall for both classes
 
 Random Forest
 
 Accuracy: 95.88%
 
-Strong overall performance with slightly lower recall for phishing samples
+Good overall performance with slightly lower recall on phishing samples
 
-Both results match the findings in the PDF and DOCX reports.
+These results are consistent with the analysis presented in the project report.
 
-🔍 Notebook Preview
+Notebook Preview
 
-GitHub will automatically render all outputs from:
+The notebook in this repository includes all outputs, so it can be viewed directly on GitHub without running the code.
+It displays the confusion matrices, performance metrics, and intermediate steps of the workflow.
 
-Confusion matrices
+Running the Notebook in Google Colab
 
-Classification reports
+After uploading the repository, replace the link below with your actual GitHub path if you'd like the notebook to run in Google Colab:
 
-Evaluation metrics
+https://colab.research.google.com/github/USERNAME/REPO/blob/main/notebook/Project_619_2.ipynb
 
-TF-IDF statistics
+Reports
 
-Visualizations
+The full explanation of the project, including background, methods, and discussion of results, is included in:
 
-No execution required.
+Final_Project_Report_Team08.docx
 
-▶️ Run the Notebook in Google Colab
+Project_619_22_1764986457.pdf
 
+Summary
 
-[https://colab.research.google.com/github/USERNAME/REPO/blob/main/notebook/Project_619_2.ipynb](https://colab.research.google.com/github/vijay-infosec/phishing-email-detection-ML/blob/main/notebook/Project_619_2.ipynb
-)
-
-📑 Reports
-
-Detailed explanation, methodology, and discussion are in:
-
-report/Final_Project_Report_Team08.docx
-
-report/Project_619_22_1764986457.pdf
-
-📌 Summary
-
-This project demonstrates the full workflow for building an email phishing detection system:
-
-Real dataset
-
-Text processing
-
-Feature engineering
-
-ML model training and evaluation
-
-High-accuracy results
-
-Clean documentation and reproducible notebook
+This project demonstrates a complete workflow for detecting phishing emails using machine learning, starting from preprocessing and feature extraction to training and evaluating two classification models. Both models performed well, with Logistic Regression showing the highest accuracy. The repository includes all code, results, and written documentation.
