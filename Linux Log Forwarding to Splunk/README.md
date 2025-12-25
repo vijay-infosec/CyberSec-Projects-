@@ -18,7 +18,7 @@ This includes:
 
 ---
 
-## **Repository Structure**
+## Repository Structure
 
 Splunk-Log-Forwarding/
 │
