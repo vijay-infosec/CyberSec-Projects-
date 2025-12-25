@@ -51,12 +51,11 @@ Example commands:
 ```
 dpkg -i splunkforwarder.deb
 /opt/splunkforwarder/bin/splunk start --accept-license
+```
 
-```
-```
 ### Enable Forwarder on boot
+```
 /opt/splunkforwarder/bin/splunk enable boot-start
-
 ```
 ---
 
