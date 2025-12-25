@@ -57,24 +57,24 @@ dpkg -i splunkforwarder.deb
 3. Configure Log Forwarding
 
 ### inputs.conf
+```bash
 [monitor:///var/log/auth.log]
 index = linux
 sourcetype = linux:auth
-
+```
 outputs.conf
+```bash
 [tcpout]
 defaultGroup = default-autolb-group
 
 [tcpout:default-autolb-group]
 server = <Splunk_Server_IP>:9997
-
-
-[tcpout:default-autolb-group]
-server = <Splunk_Server_IP>:9997
+```
 
 Restart the forwarder:
+```bash
 /opt/splunkforwarder/bin/splunk restart
-
+```
 4. Verify Logs in Splunk
 
 Example SPL queries:
