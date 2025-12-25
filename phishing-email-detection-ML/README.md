@@ -1,13 +1,13 @@
 Phishing Email Detection Using Machine Learning
 
-This project explores machine learning techniques for identifying phishing emails based on text content. The work includes data cleaning, feature engineering, TF-IDF vectorization, model training and evaluation, and a comparison of performance between Logistic Regression and Random Forest classifiers.
+This project explores machine learning techniques for identifying phishing emails using text-based features. The notebook covers data cleaning, feature engineering, TF-IDF vectorization, model training, and evaluation.
 
 Project Overview
 
-The objective is to build and evaluate models that distinguish phishing emails from legitimate ones.
-The dataset used for this project is the CEAS 2008 email dataset, which contains a little over 39,000 samples.
+The objective is to build and evaluate models that classify emails as phishing or legitimate.
+The dataset used is the CEAS 2008 email dataset containing a little over 39,000 samples.
 
-Two supervised learning models were tested:
+Models used:
 
 Logistic Regression
 
@@ -26,29 +26,29 @@ phishing-email-detection-ML/
 └── README.md
 
 Methodology
-Data preprocessing
+Data Preprocessing
 
-Combined email subject and body into a single text field
+Combined email subject and body
 
-Extracted basic features such as subject length, email length, and sender domain
+Extracted subject length, email length, sender domain
 
-Applied standard text-cleaning steps (lowercasing, removing punctuation, etc.)
+Cleaned text (lowercasing, removing punctuation, trimming whitespace)
 
 Feature Engineering
 
-TF-IDF applied to the text component
+TF-IDF vectorization applied to email text
 
-Numerical and categorical features were merged into a single feature space
+Numerical + categorical features merged
 
 Model Training
 
-Dataset split into training and testing sets (80/20, stratified)
+80/20 stratified train-test split
 
-Implemented Logistic Regression and Random Forest models
+Logistic Regression model
 
-Evaluation
+Random Forest Classifier
 
-Models were assessed using:
+Evaluation Metrics
 
 Accuracy
 
@@ -65,30 +65,38 @@ Logistic Regression
 
 Accuracy: 99.48%
 
-Very strong precision and recall for both classes
+High precision and recall across both classes
 
 Random Forest
 
 Accuracy: 95.88%
 
-Good overall performance with slightly lower recall on phishing samples
-
-These results are consistent with the analysis presented in the project report.
+Slightly lower recall on phishing samples
 
 Notebook Preview
 
-The notebook in this repository includes all outputs, so it can be viewed directly on GitHub without running the code.
-It displays the confusion matrices, performance metrics, and intermediate steps of the workflow.
+GitHub renders the notebook outputs automatically.
+The .ipynb file includes:
 
-Running the Notebook in Google Colab
+Confusion matrices
 
-After uploading the repository, replace the link below with your actual GitHub path if you'd like the notebook to run in Google Colab:
+Classification reports
+
+Evaluation metrics
+
+TF-IDF processing steps
+
+No execution is required to view results.
+
+Run the Notebook in Google Colab
+
+Replace USERNAME and REPO with your GitHub details if you want to offer a runnable version:
 
 https://colab.research.google.com/github/USERNAME/REPO/blob/main/notebook/Project_619_2.ipynb
 
 Reports
 
-The full explanation of the project, including background, methods, and discussion of results, is included in:
+The full writeup is available in:
 
 Final_Project_Report_Team08.docx
 
@@ -96,4 +104,5 @@ Project_619_22_1764986457.pdf
 
 Summary
 
-This project demonstrates a complete workflow for detecting phishing emails using machine learning, starting from preprocessing and feature extraction to training and evaluating two classification models. Both models performed well, with Logistic Regression showing the highest accuracy. The repository includes all code, results, and written documentation.
+This project demonstrates a complete workflow for detecting phishing emails using machine learning.
+Both Logistic Regression and Random Forest performed well, with Logistic Regression achieving the highest accuracy. The repository includes the notebook, outputs, and written reports.
