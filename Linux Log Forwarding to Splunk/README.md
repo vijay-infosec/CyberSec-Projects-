@@ -2,7 +2,7 @@ This project demonstrates how to forward system logs from an Ubuntu Server to Sp
 
 Splunk-Log-Forwarding/
 │
-├── screenshots/ # (Optional) Images of config and results
+├── screenshots/Images of config and results
 │
 ├── Configuring_Linux_to_Forward_Logs_to_Splunk.pdf # Full lab document
 │
