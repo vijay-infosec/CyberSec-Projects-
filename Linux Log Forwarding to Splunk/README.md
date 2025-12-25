@@ -1,93 +1,100 @@
-Project Overview
+# **Linux Log Forwarding to Splunk**
 
-The goal is to send Linux system logs (such as /var/log/auth.log) to a Splunk Enterprise instance for monitoring and analysis.
+This mini-project demonstrates how to forward Linux system logs to Splunk Enterprise using the Splunk Universal Forwarder.  
+It includes installation, configuration, and verification using SPL queries.
+
+---
+
+## **Project Overview**
+
+The goal is to send Linux system logs (such as `/var/log/auth.log`) to a Splunk Enterprise instance for monitoring and analysis.
 
 This includes:
 
-Installing the Splunk Universal Forwarder
+- Installing the Splunk Universal Forwarder  
+- Configuring inputs (log sources)  
+- Configuring outputs (Splunk receiver)  
+- Verifying ingestion in Splunk with SPL  
 
-Configuring inputs (log sources)
+---
 
-Configuring outputs (Splunk receiver)
+## **Repository Structure**
 
-Verifying ingestion in Splunk using SPL
-
-Repository Structure
 Splunk-Log-Forwarding/
 │
-├── screenshots/                     # Optional images of configuration and results
+├── screenshots/
+│ ├── forwarder_status.png
+│ ├── inputs_conf.png
+│ ├── outputs_conf.png
+│ └── splunk_results.png
 │
-├── Configuring_Linux_to_Forward_Logs_to_Splunk.pdf   # Full lab document
+├── Configuring_Linux_to_Forward_Logs_to_Splunk.pdf
 │
 └── README.md
 
-Steps Performed
-1. Linux Setup
 
-Installed Ubuntu Server in a virtual machine
+---
 
-Enabled SSH
+## **Steps Performed**
 
-Configured UFW firewall rules
+---
 
-2. Install Splunk Universal Forwarder
+### **1. Linux Setup**
+
+- Installed Ubuntu Server in a virtual machine  
+- Enabled SSH  
+- Configured UFW firewall rules  
+
+---
+
+### **2. Install Splunk Universal Forwarder**
 
 Example commands:
 
+```bash
 dpkg -i splunkforwarder.deb
 /opt/splunkforwarder/bin/splunk start --accept-license
 
-3. Configure Log Forwarding
-inputs.conf
+Enable Splunk Forwarder to start on boot:
+/opt/splunkforwarder/bin/splunk enable boot-start
+
+
+###**3. Configure Log Forwarding**###
+
+## **inputs.conf**##
 [monitor:///var/log/auth.log]
 index = linux
 sourcetype = linux:auth
 
-outputs.conf
+## **outputs.conf**##
 [tcpout]
 defaultGroup = default-autolb-group
 
 [tcpout:default-autolb-group]
 server = <Splunk_Server_IP>:9997
 
-4. Verify Logs in Splunk
+Restart the forwarder:
+/opt/splunkforwarder/bin/splunk restart
 
-Example SPL searches:
+###**3.Verify Logs in Splunk**###
 
 index=linux
 
-index=* | dedup host source sourcetype | table host source sourcetype
+index=* 
+| dedup host source sourcetype 
+| table host source sourcetype
 
+If events appear, the forwarder is configured correctly.
 
-If logs appear, forwarding is working correctly.
+##**Notes**##
 
-Screenshots (Optional)
-
-Add only the meaningful ones:
-
-Forwarder status
-
-inputs.conf / outputs.conf
-
-SPL search results in Splunk
-
-Example (once you upload them):
-
-### Forwarder Status
-![Forwarder Status](screenshots/forwarder_status.png)
-
-### Log Ingestion in Splunk
-![Search Results](screenshots/splunk_results.png)
-
-Notes
-
-This is a small lab exercise that demonstrates basic Splunk data onboarding.
-It is not a full project, but it provides hands-on experience with:
+This is a small SIEM onboarding lab meant to demonstrate basic Splunk data forwarding.
+It provides practical experience with:
 
 Splunk Universal Forwarder
 
 inputs.conf and outputs.conf
 
-Log pipeline verification
+Log ingestion pipeline
 
-Basic SPL searching
+Basic SPL querying
