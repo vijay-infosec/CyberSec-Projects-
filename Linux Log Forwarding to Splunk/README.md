@@ -76,7 +76,7 @@ defaultGroup = default-autolb-group
 server = <Splunk_Server_IP>:9997
 ```
 
-Restart the forwarder:
+### Restart the forwarder
 ```bash
 /opt/splunkforwarder/bin/splunk restart
 ```
