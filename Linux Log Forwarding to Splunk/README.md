@@ -59,14 +59,14 @@ Enable Splunk Forwarder to start on boot:
 /opt/splunkforwarder/bin/splunk enable boot-start
 
 
-###**3. Configure Log Forwarding**###
+###**3. Configure Log Forwarding**
 
-## **inputs.conf**##
+**inputs.conf**
 [monitor:///var/log/auth.log]
 index = linux
 sourcetype = linux:auth
 
-## **outputs.conf**##
+**outputs.conf**
 [tcpout]
 defaultGroup = default-autolb-group
 
@@ -76,7 +76,7 @@ server = <Splunk_Server_IP>:9997
 Restart the forwarder:
 /opt/splunkforwarder/bin/splunk restart
 
-###**3.Verify Logs in Splunk**###
+###**3.Verify Logs in Splunk**
 
 index=linux
 
@@ -86,7 +86,7 @@ index=*
 
 If events appear, the forwarder is configured correctly.
 
-##**Notes**##
+##***Notes**
 
 This is a small SIEM onboarding lab meant to demonstrate basic Splunk data forwarding.
 It provides practical experience with:
