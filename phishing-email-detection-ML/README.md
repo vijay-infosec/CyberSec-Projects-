@@ -84,7 +84,8 @@ No execution is needed to view results.
 
 ## Run in Google Colab 
 
-[https://colab.research.google.com/github/USERNAME/REPO/blob/main/notebook/Project_619_2.ipynb](https://colab.research.google.com/github/vijay-infosec/CyberSec-Projects-/blob/main/phishing-email-detection-ML/notebook/Project_619_2.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/vijay-infosec/CyberSec-Projects-/blob/main/phishing-email-detection-ML/notebook/Project_619_2.ipynb)
+
 
 
 ---
