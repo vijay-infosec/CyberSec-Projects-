@@ -83,7 +83,9 @@ index=*
 | dedup host source sourcetype 
 | table host source sourcetype
 If events appear, the forwarder is configured correctly.
+
 ---
+
 Notes
 
 This is a small SIEM onboarding lab meant to demonstrate basic Splunk data forwarding.
