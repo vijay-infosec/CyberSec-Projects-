@@ -43,14 +43,14 @@ Splunk-Log-Forwarding/
   
 ---
 
+```markdown
 ### **2. Install Splunk Universal Forwarder**
 
 Example commands:
 
 ```bash
-
-Enable Forwarder on boot:
-/opt/splunkforwarder/bin/splunk enable boot-start
+dpkg -i splunkforwarder.deb
+/opt/splunkforwarder/bin/splunk start --accept-license
 
 ---
 
