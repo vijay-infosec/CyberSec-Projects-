@@ -32,15 +32,14 @@ Splunk-Log-Forwarding/
 │
 └── README.md
 
+yaml
+Copy code
 
 ---
 
 ## **Steps Performed**
 
----
-
 ### **1. Linux Setup**
-
 - Installed Ubuntu Server in a virtual machine  
 - Enabled SSH  
 - Configured UFW firewall rules  
@@ -54,40 +53,45 @@ Example commands:
 ```bash
 dpkg -i splunkforwarder.deb
 /opt/splunkforwarder/bin/splunk start --accept-license
+Enable the Forwarder on startup:
 
-Enable Splunk Forwarder to start on boot:
+bash
+Copy code
 /opt/splunkforwarder/bin/splunk enable boot-start
-
-
-###**3. Configure Log Forwarding**
-
-**inputs.conf**
+3. Configure Log Forwarding
+inputs.conf
+ini
+Copy code
 [monitor:///var/log/auth.log]
 index = linux
 sourcetype = linux:auth
-
-**outputs.conf**
+outputs.conf
+ini
+Copy code
 [tcpout]
 defaultGroup = default-autolb-group
 
 [tcpout:default-autolb-group]
 server = <Splunk_Server_IP>:9997
+Restart Forwarder:
 
-Restart the forwarder:
+bash
+Copy code
 /opt/splunkforwarder/bin/splunk restart
+4. Verify Logs in Splunk
+Example SPL queries:
 
-###**3.Verify Logs in Splunk**
-
+spl
+Copy code
 index=linux
-
+spl
+Copy code
 index=* 
 | dedup host source sourcetype 
 | table host source sourcetype
-
 If events appear, the forwarder is configured correctly.
 
-##***Notes**
-
+Notes
 This is a small SIEM onboarding lab meant to demonstrate basic Splunk data forwarding.
 It provides practical experience with:
 
