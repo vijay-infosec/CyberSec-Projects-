@@ -7,12 +7,14 @@ This screenshot shows the Splunk Universal Forwarder restarting successfully aft
 
 ![Forwarder Status](screenshots/forwarder_status.png)
 
+
 ---
 
 ### **2. inputs.conf Configuration**
 This confirms that log monitoring is enabled for `/var/log/auth.log` and assigned to the `linux` index.
 
 ![inputs.conf](screenshots/inputs_conf.png)
+
 
 ---
 
