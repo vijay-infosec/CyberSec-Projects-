@@ -1,108 +1,109 @@
-Phishing Email Detection Using Machine Learning
+# Phishing Email Detection Using Machine Learning
 
-This project explores machine learning techniques for identifying phishing emails using text-based features. The notebook covers data cleaning, feature engineering, TF-IDF vectorization, model training, and evaluation.
+This project explores machine learning techniques for identifying phishing emails from legitimate ones.  
+The notebook includes preprocessing, feature engineering, TF-IDF vectorization, model training, and evaluation.
 
-Project Overview
+---
 
-The objective is to build and evaluate models that classify emails as phishing or legitimate.
-The dataset used is the CEAS 2008 email dataset containing a little over 39,000 samples.
+## Project Overview
 
-Models used:
+The goal of this project is to classify emails as phishing or legitimate using supervised learning models.  
+The CEAS 2008 dataset (≈39K samples) was used.
 
-Logistic Regression
+Models implemented:
+- Logistic Regression  
+- Random Forest Classifier  
 
-Random Forest Classifier
+---
 
-Repository Structure
+## Repository Structure
+
 phishing-email-detection-ML/
 │
 ├── notebook/
-│   └── Project_619_2.ipynb
+│ └── Project_619_2.ipynb
 │
 ├── report/
-│   ├── Final_Project_Report_Team08.docx
-│   └── Project_619_22_1764986457.pdf
+│ ├── Final_Project_Report_Team08.docx
+│ └── Project_619_22_1764986457.pdf
 │
 └── README.md
 
-Methodology
-Data Preprocessing
 
-Combined email subject and body
+---
 
-Extracted subject length, email length, sender domain
+## Methodology
 
-Cleaned text (lowercasing, removing punctuation, trimming whitespace)
+### 1. Data Preprocessing
+- Merged email subject + body  
+- Extracted features: subject_length, email_length, sender_domain  
+- Lowercased text, removed punctuation and extra whitespace  
 
-Feature Engineering
+### 2. Feature Engineering
+- Applied TF-IDF to text  
+- Combined numerical + categorical features  
 
-TF-IDF vectorization applied to email text
+### 3. Model Training
+- Stratified 80/20 train-test split  
+- Trained Logistic Regression  
+- Trained Random Forest  
 
-Numerical + categorical features merged
+### 4. Evaluation Metrics
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+- Confusion Matrix  
 
-Model Training
+---
 
-80/20 stratified train-test split
+## Model Performance
 
-Logistic Regression model
+### Logistic Regression
+- **Accuracy: 99.48%**  
+- Strong precision and recall for both classes  
 
-Random Forest Classifier
+### Random Forest
+- **Accuracy: 95.88%**  
+- Good performance with slightly reduced recall for phishing samples  
 
-Evaluation Metrics
+---
 
-Accuracy
+## Notebook Preview
 
-Precision
+GitHub displays the notebook outputs directly:
 
-Recall
+- Confusion matrices  
+- Classification reports  
+- Evaluation metrics  
+- TF-IDF vectors  
 
-F1-score
+No execution is needed to view results.
 
-Confusion matrix
+---
 
-Model Performance
-Logistic Regression
-
-Accuracy: 99.48%
-
-High precision and recall across both classes
-
-Random Forest
-
-Accuracy: 95.88%
-
-Slightly lower recall on phishing samples
-
-Notebook Preview
-
-GitHub renders the notebook outputs automatically.
-The .ipynb file includes:
-
-Confusion matrices
-
-Classification reports
-
-Evaluation metrics
-
-TF-IDF processing steps
-
-No execution is required to view results.
-
-Run the Notebook in Google Colab
-
-Replace USERNAME and REPO with your GitHub details if you want to offer a runnable version:
+## Run in Google Colab 
 
 https://colab.research.google.com/github/USERNAME/REPO/blob/main/notebook/Project_619_2.ipynb
 
-Reports
 
-The full writeup is available in:
+---
 
-Final_Project_Report_Team08.docx
+## Reports
 
-Project_619_22_1764986457.pdf
+Full project documentation:
 
-Summary
+- `Final_Project_Report_Team08.docx`  
+- `Project_619_22_1764986457.pdf`
 
-This project demonstrates a complete workflow for detecting phishing emails using machine learning.
-Both Logistic Regression and Random Forest performed well, with Logistic Regression achieving the highest accuracy. The repository includes the notebook, outputs, and written reports.
+---
+
+## Summary
+
+This project demonstrates a complete ML workflow for phishing detection using text-based features.  
+Both Logistic Regression and Random Forest achieved high accuracy, with Logistic Regression performing the best.  
+The repository includes the full notebook, results, and written reports.
+
+
+
+
