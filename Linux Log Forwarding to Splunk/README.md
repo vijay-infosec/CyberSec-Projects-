@@ -51,7 +51,7 @@ Example commands:
 ```bash
 dpkg -i splunkforwarder.deb
 /opt/splunkforwarder/bin/splunk start --accept-license
-
+```
 ---
 
 3. Configure Log Forwarding
