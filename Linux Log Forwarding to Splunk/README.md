@@ -1,0 +1,1 @@
+This project demonstrates how to forward system logs from an Ubuntu Server to Splunk Enterprise using the Splunk Universal Forwarder. It includes basic configuration steps and validation using SPL queries.
