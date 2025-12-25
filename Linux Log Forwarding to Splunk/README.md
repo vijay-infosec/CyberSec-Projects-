@@ -43,18 +43,24 @@ Splunk-Log-Forwarding/
   
 ---
 
-```markdown
+
 ### **2. Install Splunk Universal Forwarder**
 
 Example commands:
 
-```bash
+```
 dpkg -i splunkforwarder.deb
 /opt/splunkforwarder/bin/splunk start --accept-license
+
+```
+```
+### Enable Forwarder on boot
+/opt/splunkforwarder/bin/splunk enable boot-start
+
 ```
 ---
 
-3. Configure Log Forwarding
+### **3. Configure Log Forwarding**
 
 ### inputs.conf
 ```bash
@@ -62,7 +68,7 @@ dpkg -i splunkforwarder.deb
 index = linux
 sourcetype = linux:auth
 ```
-outputs.conf
+### outputs.conf
 ```bash
 [tcpout]
 defaultGroup = default-autolb-group
