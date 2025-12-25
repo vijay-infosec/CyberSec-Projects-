@@ -19,7 +19,6 @@ This includes:
 ---
 
 ## Repository Structure
-
 Splunk-Log-Forwarding/
 │
 ├── screenshots/
